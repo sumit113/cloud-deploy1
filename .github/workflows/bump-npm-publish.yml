@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'packages/is-even-by-cv/**'
-      - 'packages/is-odd-by-cv/**'
+      - 'packages/folder-one/**'
+      - 'packages/folder-two/**'
 
 jobs:
   publish:
@@ -15,10 +15,10 @@ jobs:
       fail-fast: false
       matrix:
         package:
-          - name: is-even-by-cv
-            path: packages/is-even-by-cv
-          - name: is-odd-by-cv
-            path: packages/is-odd-by-cv
+          - name: folder-one
+            path: packages/folder-one
+          - name: folder-two
+            path: packages/folder-two
             
     steps:
       - name: Check out repository
@@ -80,7 +80,7 @@ jobs:
             git checkout main
             git branch -a
             git config --local user.email "sumit.lal007@gmail.com"
-            git config --local user.name "sumit113"
+            git config --local user.name "sumit1989"
             git add package.json
             git commit -m "Bump version to $NEW_VERSION"
             git push -u origin main
